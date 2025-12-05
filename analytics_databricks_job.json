@@ -1,0 +1,20 @@
+{
+  "name": "amazon-sales-delta-ingest",
+  "new_cluster": {
+    "spark_version": "13.3.x-scala2.12", 
+    "node_type_id": "i3.xlarge", 
+    "num_workers": 2
+  },
+  "notebook_task": {
+    "notebook_path": "/Repos/<your-user>/Amazon-Raw-Sales-Data-Analysis/analytics/databricks_batch_delta_ingest"
+  },
+  "max_retries": 1,
+  "timeout_seconds": 3600,
+  "schedule": {
+    "quartz_cron_expression": "0 0 2 * * ?",
+    "timezone_id": "UTC"
+  },
+  "email_notifications": {
+    "on_failure": ["you@company.com"]
+  }
+}
